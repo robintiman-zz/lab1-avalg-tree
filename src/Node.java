@@ -26,4 +26,13 @@ public class Node {
 	public void setSibling(Node n) {
 		sibling = n;
 	}
+	
+	public void checkTriangle() {
+		if (leftChild.isMarked() && rightChild.isMarked()) {
+			mark();
+		} 
+		if (parent.isMarked() && sibling.isMarked()) {
+			mark();
+		}
+	}
 }
