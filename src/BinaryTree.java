@@ -8,6 +8,13 @@ public class BinaryTree {
 		this.N = N;
 		nodes = new boolean[N + 1];
 	}
+	
+	public BinaryTree(int N, int[] knuth) {
+		this.knuth = knuth;
+		count = 0;
+		this.N = N;
+		nodes = new boolean[N + 1];
+	}
 
 	public void checkTriangle(int n) {
 		if (!nodes[n]) {
@@ -38,14 +45,6 @@ public class BinaryTree {
 			}
 		} catch (Exception e) {
 		}
-		
-		if (count >= N) {
-			for (int i = 1; i < nodes.length; i++) {
-				System.out.println(i + " = " + nodes[i]);
-			}
-			return;
-		}
-
 	}
 	
 	public int getCount() {
@@ -69,6 +68,10 @@ public class BinaryTree {
 		children[0] = n * 2;
 		children[1] = n * 2 + 1;
 		return children;
+	}
+	
+	public boolean[] getNodes(){
+		return nodes;
 	}
 
 }

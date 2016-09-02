@@ -18,6 +18,9 @@ public class Main {
 			count++;
 			tree.checkTriangle(rand.nextInt(N) + 1);
 		}
+		for (int i = 1; i < tree.getNodes().length; i++) {
+			System.out.println(i + " = " + tree.getNodes()[i]);
+		}
 		System.out.println(count);
 	}
 
@@ -29,17 +32,39 @@ public class Main {
 			knuth[i - 1] = i;
 		}
 		Knuth.shuffle(knuth);
-		for (int i : knuth) {
+		for (int node : knuth) {
 			count++;
-			tree.checkTriangle(i);
+			tree.checkTriangle(node);
 			if (tree.getCount() >= N)
 				break;
+		}
+		for (int i = 1; i < tree.getNodes().length; i++) {
+			System.out.println(i + " = " + tree.getNodes()[i]);
 		}
 		System.out.println(count);
 	}
 
 	private static void process3() {
-		
+		int[] knuth = new int[N];
+		BinaryTree tree = new BinaryTree(N);
+		int count = 0;
+		for (int i = 1; i <= N; i++) {
+			knuth[i - 1] = i;
+		}
+		Knuth.shuffle(knuth);
+		for (int node : knuth) {
+			count++;
+			boolean[] nodes = tree.getNodes();
+			if(!nodes[node]){
+				tree.checkTriangle(node);
+			}
+			if (tree.getCount() >= N)
+				break;
+		}
+		for (int i = 1; i < tree.getNodes().length; i++) {
+			System.out.println(i + " = " + tree.getNodes()[i]);
+		}
+		System.out.println(count);
 	}
 
 }
