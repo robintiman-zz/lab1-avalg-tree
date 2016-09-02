@@ -1,15 +1,12 @@
 public class BinaryTree {
 	private int N, count;
 	private boolean[] nodes;
-
+	private int[] knuth;
+	
 	public BinaryTree(int N) {
 		count = 0;
 		this.N = N;
 		nodes = new boolean[N + 1];
-	}
-
-	public void mark(int n) {
-		nodes[n] = true;
 	}
 
 	public void checkTriangle(int n) {
