@@ -1,0 +1,65 @@
+Process 1:
+Mean value for N = 1 is 1.0 +- 0.0
+Mean value for N = 3 is 2.4 +- 0.8
+Mean value for N = 7 is 7.3 +- 3.579106033634656
+Mean value for N = 15 is 14.2 +- 4.166533331199932
+Mean value for N = 31 is 44.7 +- 13.95026881461429
+Mean value for N = 63 is 127.9 +- 38.08792459559854
+Mean value for N = 127 is 253.9 +- 65.33827362273968
+Mean value for N = 255 is 589.6 +- 157.25724148668004
+Mean value for N = 511 is 1391.6 +- 367.11529524115446
+Mean value for N = 1023 is 3312.8 +- 581.0405837805135
+Mean value for N = 2047 is 7395.0 +- 1421.4737422829871
+Mean value for N = 4095 is 15129.7 +- 2665.2657672359805
+Mean value for N = 8191 is 36538.9 +- 7139.05822150233
+Mean value for N = 16383 is 71597.9 +- 9257.067661522196
+Mean value for N = 32767 is 145323.8 +- 9467.639577001228
+Mean value for N = 65535 is 321085.8 +- 36205.81345530024
+Mean value for N = 131071 is 757640.0 +- 119197.90214764688
+Mean value for N = 262143 is 1505553.5 +- 114834.59551742236
+Mean value for N = 524287 is 3243549.7 +- 252609.42288998247
+Mean value for N = 1048575 is 6847654.2 +- 439049.8698377668
+
+Process 2:
+Mean value for N = 1 is 1.0 +- 0.0
+Mean value for N = 3 is 2.0 +- 0.0
+Mean value for N = 7 is 4.7 +- 0.7810249675906654
+Mean value for N = 15 is 10.9 +- 1.374772708486752
+Mean value for N = 31 is 23.4 +- 2.4979991993593593
+Mean value for N = 63 is 50.4 +- 6.019966777316965
+Mean value for N = 127 is 109.1 +- 9.3
+Mean value for N = 255 is 226.9 +- 9.38562730988185
+Mean value for N = 511 is 475.1 +- 18.511888072263183
+Mean value for N = 1023 is 975.1 +- 32.94070430333875
+Mean value for N = 2047 is 1988.1 +- 31.258438860570116
+Mean value for N = 4095 is 3973.7 +- 83.84754021436764
+Mean value for N = 8191 is 7998.1 +- 59.338773158871426
+Mean value for N = 16383 is 16124.2 +- 63.672285964931405
+Mean value for N = 32767 is 32549.7 +- 122.3552614316197
+Mean value for N = 65535 is 65084.5 +- 198.2555169471962
+Mean value for N = 131071 is 130143.4 +- 413.10850874800434
+Mean value for N = 262143 is 261196.3 +- 285.72226024585484
+Mean value for N = 524287 is 522846.9 +- 568.2602308801839
+Mean value for N = 1048575 is 1046834.1 +- 679.6524773735472
+
+Process 3:
+Mean value for N = 1 is 0.0 +- 0.0
+Mean value for N = 3 is 1.0 +- 0.0
+Mean value for N = 7 is 3.0 +- 0.0
+Mean value for N = 15 is 7.0 +- 0.0
+Mean value for N = 31 is 15.0 +- 0.0
+Mean value for N = 63 is 31.0 +- 0.0
+Mean value for N = 127 is 63.0 +- 0.0
+Mean value for N = 255 is 127.0 +- 0.0
+Mean value for N = 511 is 255.0 +- 0.0
+Mean value for N = 1023 is 511.0 +- 0.0
+Mean value for N = 2047 is 1023.0 +- 0.0
+Mean value for N = 4095 is 2047.0 +- 0.0
+Mean value for N = 8191 is 4095.0 +- 0.0
+Mean value for N = 16383 is 8191.0 +- 0.0
+Mean value for N = 32767 is 16383.0 +- 0.0
+Mean value for N = 65535 is 32767.0 +- 0.0
+Mean value for N = 131071 is 65535.0 +- 0.0
+Mean value for N = 262143 is 131071.0 +- 0.0
+Mean value for N = 524287 is 262143.0 +- 0.0
+Mean value for N = 1048575 is 524287.0 +- 0.0
