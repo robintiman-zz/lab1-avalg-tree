@@ -41,28 +41,11 @@ public class Main {
 		// Print to file
 		try {
 			PrintWriter pw = new PrintWriter("lab1-avalg.txt");
-			// Process 1
-			pw.println("Process 1:");
 			for (int i = 0; i < HEIGHT; i++) {
 				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r1Mean[i]) + " +- "
-						+ convToOneSignificantDigit(r1Std[i]));
-			}
-
-			// Process 2
-			pw.println("\nProcess 2:");
-			for (int i = 0; i < HEIGHT; i++) {
-				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r2Mean[i]) + " +- "
-						+ convToOneSignificantDigit(r2Std[i]));
-			}
-
-			// Process 2
-			pw.println("\nProcess 3:");
-			for (int i = 0; i < HEIGHT; i++) {
-				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r3Mean[i]) + " +- "
-						+ convToOneSignificantDigit(r3Std[i]));
+				pw.print(N + " & " + roundOff(r1Mean[i], r1Std[i]) + " \\pm " + convToOneSignificantDigit(r1Std[i]));
+				pw.print(" & " + roundOff(r2Mean[i], r2Std[i]) + " \\pm " + convToOneSignificantDigit(r2Std[i]));
+				pw.println(" & " + roundOff(r3Mean[i], r3Std[i]) + " \\pm " + convToOneSignificantDigit(r3Std[i]) + "\\\\");
 			}
 			pw.close();
 
@@ -116,16 +99,18 @@ public class Main {
 		bd = bd.round(new MathContext(1));
 		return bd.doubleValue();
 	}
-	
-	private static double roundOff(double d, int dec) {
-		String numb = Double.toString(d);
-		String[] s = numb.split(".");
+
+	private static double roundOff(double mean, double std) {
+		int places = 0;
 		try {
-			int places = s[1].length();
-			return Math.round(d);
-		} catch (Exception e) {
-			
+			String s = Double.toString(std);
+			String decStd = s.split(".")[1];
+			places = decStd.length();
+		} catch (Exception e1) {
 		}
-		return 0;
+		mean = mean * Math.pow(10, places);
+		mean = Math.round(mean);
+		mean = mean / Math.pow(10, places);
+		return mean;
 	}
 }
