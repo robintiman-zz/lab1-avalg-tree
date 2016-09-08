@@ -2,11 +2,17 @@ package datacalculations;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.math.MathContext;
 
 import processes.R1;
 import processes.R2;
 import processes.R3;
 
+/**
+ * @author robintiman
+ *
+ */
 public class Main {
 	private static final int HEIGHT = 20;
 	private static final int ITERATIONS = 10;
@@ -39,27 +45,27 @@ public class Main {
 			pw.println("Process 1:");
 			for (int i = 0; i < HEIGHT; i++) {
 				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + r1Mean[i]
-						+ " +- " + r1Std[i]);
+				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r1Mean[i]) + " +- "
+						+ convToOneSignificantDigit(r1Std[i]));
 			}
 
 			// Process 2
 			pw.println("\nProcess 2:");
 			for (int i = 0; i < HEIGHT; i++) {
 				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + r2Mean[i]
-						+ " +- " + r2Std[i]);
+				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r2Mean[i]) + " +- "
+						+ convToOneSignificantDigit(r2Std[i]));
 			}
 
 			// Process 2
 			pw.println("\nProcess 3:");
 			for (int i = 0; i < HEIGHT; i++) {
 				int N = (int) (Math.pow(2, i + 1) - 1.0);
-				pw.println("Mean value for N = " + N + " is " + r3Mean[i]
-						+ " +- " + r3Std[i]);
+				pw.println("Mean value for N = " + N + " is " + convToOneSignificantDigit(r3Mean[i]) + " +- "
+						+ convToOneSignificantDigit(r3Std[i]));
 			}
 			pw.close();
-			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -103,5 +109,23 @@ public class Main {
 			std[i] = Math.sqrt(sum / (double) ITERATIONS);
 		}
 		return std;
+	}
+
+	private static double convToOneSignificantDigit(double d) {
+		BigDecimal bd = new BigDecimal(d);
+		bd = bd.round(new MathContext(1));
+		return bd.doubleValue();
+	}
+	
+	private static double roundOff(double d, int dec) {
+		String numb = Double.toString(d);
+		String[] s = numb.split(".");
+		try {
+			int places = s[1].length();
+			return Math.round(d);
+		} catch (Exception e) {
+			
+		}
+		return 0;
 	}
 }
